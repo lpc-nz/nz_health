@@ -1,0 +1,12 @@
+{% extends "nz_health/base.html" %} {% block content %}
+<h2>Will Show Person_details here</h2>
+
+<p>Are you sure you want to delete {{ referral_delete.id }} ?</p>
+
+<form action="{% url 'referral_delete' referral_delete.id %}" method="POST">
+  {% csrf_token %}
+  <a href="/referrals">Cancel</a>
+  <input type="submit" name="Confirm">Delete</input>
+</form>
+
+{% endblock content %}

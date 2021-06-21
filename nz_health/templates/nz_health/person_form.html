@@ -1,0 +1,22 @@
+{% extends "nz_health/base.html" %}
+ {% comment %} Comment {% endcomment %}
+ 
+{% block content %}
+    <button class='btn back'>
+        <a type="button" href="{% url 'person_list' %}">Back to List</a>
+    </button>
+    <h3>ADD NEW PERSON TO LIST</h3>
+    
+    <form method="post" autocomplete="off" id="person_form">
+        {% csrf_token %}
+        
+        {{ person_form }}
+        
+        <div>
+        <button class="btn submit" type="submit" >Submit</button>
+        
+        </div>
+    </form>
+  
+
+{% endblock content %}

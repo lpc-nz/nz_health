@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  /* font-family: system-ui; */
+  font-family: 'Roboto', sans-serif;
+  background-color: #d9d9d9;
+  margin: 0;
+  justify-content: center;
+  justify-items: center;
+  /* text-align: center; */
+  align-items: center;
+  flex-direction: column;
+}
+main {
+  height: 80vh;
+}
+
+/* Style */
+#topnav,
+main,
+#botnav {
+  max-width: 60rem;
+  margin: auto;
+}
+
+form {
+  margin: auto;
+  max-width: 100%;
+  width: 20em;
+}
+
+.welcome {
+  margin-top: 2em;
+}
+
+#person_form,
+#position_form,
+#referral_form {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+#position_form input,
+#referral_form input,
+#person_form input,
+#id_referrer,
+#id_username,
+#id_password {
+  height: 2.5rem;
+  border-radius: 5px;
+  font-size: larger;
+}
+
+header {
+  background-color: #e9c46a;
+}
+
+footer {
+  text-align: center;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  font-size: 1.2em;
+  border: 1px solid #868686;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+#login {
+  width: 0;
+}
+
+.btn-login {
+  width: 5em;
+  height: 3em;
+  background-color: skyblue;
+  text-transform: capitalize;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#login td,
+#login th {
+  font-size: 1.3em;
+  border: 0px solid #868686;
+  text-align: left;
+  padding: 8px;
+}
+#topnav {
+  display: flex;
+  align-items: center;
+  background-color: #e9c46a;
+}
+
+.login,
+.logout {
+  flex-grow: 1;
+  text-align: end;
+}
+
+.nav-bar,
+.login,
+.logout {
+  margin-top: 1.4rem;
+}
+
+.nav-bar a,
+.login a,
+.logout a {
+  margin: 1em;
+  text-decoration: none;
+  color: #141414;
+  font-size: 1.3em;
+}
+
+#homecontent a {
+  color: #141414;
+}
+
+h3 {
+  text-align: center;
+}
+
+.nav-bar a:hover,
+#homecontent a:hover,
+.login a:hover,
+.logout a:hover {
+  color: #066011;
+}
+
+img {
+  width: 8rem;
+  margin-right: 2rem;
+}
+
+/* Display */
+
+#homecontent {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+#homecontent button {
+  background-color: #e9c46a;
+  margin: 2em;
+  font-size: 0.75em;
+  width: 12em;
+  height: 8em;
+  border-radius: 4px;
+}
+
+#homecontent a {
+  text-decoration: none;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.btn {
+  background-color: #4caf50; /* Green */
+  border: none;
+  padding: 0.5em 0.5em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin: 4px 0;
+}
+
+.btn.add-person {
+  margin-left: 47em;
+  width: 7em;
+}
+
+.btn a {
+  color: #141414;
+  text-decoration: none;
+  text-align: center;
+}
+
+button a {
+  color: #141414;
+  text-decoration: none;
+}
+
+.button.delete a {
+  color: rgb(186, 3, 3);
+}
+.button.details a {
+  color: rgb(0, 77, 66);
+}
+
+.button.edit a {
+  color: #684e0d;
+}
+
+label {
+  margin: 0.6em 0;
+  font-weight: bold;
+}
+
+.login-link {
+  margin-left: 28em;
+}
+
+.btn.login {
+  margin-left: 7.5em;
+}
+
+h2 {
+  text-align: center;
+}
+
+.person-details {
+  display: flex;
+}

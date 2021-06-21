@@ -1,0 +1,39 @@
+{% extends "nz_health/base.html" %} {% block content %}
+<h2>PERSON LISTING</h2>
+
+<button class="btn add-person">
+  <a href="/person_form">Add New Person</a>
+</button>
+<table>
+  <tr>
+    <th>Person ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Action</th>
+  </tr>
+  {% for the_person in person %}
+  <tr>
+    <td>{{ the_person.id }}</td>
+    <td>{{ the_person.first_name }}</td>
+    <td>{{ the_person.last_name }}</td>
+    <td class="action">
+      <button class="button details">
+        <a href="{% url 'person_details' the_person.id %}">Add Referrer</a>
+      </button>
+      <button class="button details">
+        <a href="{% url 'person_details' the_person.id %}">Details</a>
+      </button>
+
+      <button class="button edit">
+        <a href=" {% url 'person_update' the_person.id %}">Edit</a>
+      </button>
+
+      <button class="button delete">
+        <a href=" {% url 'person_delete' the_person.id %}">Delete</a>
+      </button>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock content %}

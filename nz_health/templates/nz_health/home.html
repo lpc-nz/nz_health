@@ -1,0 +1,33 @@
+{% extends "nz_health/base.html" %} 
+{% block content %}
+        {% if user.is_authenticated %}
+          <h3>Welcome {{ user|capfirst }}<h3>
+          <h3>Have a great working day!<h3>
+
+          <div id='homecontent'>
+              <button class="btn person-list">
+                <a href="/person">View Person List</a>       
+              </button>
+              <button class="btn add-person">
+                <a href="/person_form">Add New Person</a>
+              </button>
+              <button class="btn referrer-list">
+                <a href="/referrals">View Referrals</a>
+              </button>
+              <button class="btn referral">
+                <a href="/referral_form">Add Referral</a>
+              </button>
+              <button class="btn admin">
+                <a href="/admin">Admin</a>
+              </button>
+          </div>
+        {% else %}
+          
+          <h3 class='welcome'>Welcome to Health Management Case System<h3>
+          <p>Please <a href="/login">Login</a> to start the section</p>
+          
+          
+        {% endif %}
+      
+
+{% endblock content %}

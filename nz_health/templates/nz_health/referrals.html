@@ -1,0 +1,41 @@
+{% extends "nz_health/base.html" %} {% block content %}
+<h2>Will Show Referrals here</h2>
+
+<button class="btn add-person">
+  <a href="/referral_form">Add New Referral</a>
+</button>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Referrer</th>
+    <th>Patient First_Name</th>
+    <th>Patient Last_Name</th>
+
+    <th>Referral Date</th>
+    <th>Action</th>
+  </tr>
+  {% for referral in referrals %}
+
+  <tr>
+    <td>{{ referral.id }}</td>
+    <td>{{ referral.referrer}}</td>
+    <td>{{ referral.person.first_name }}</td>
+    <td>{{ referral.person.last_name }}</td>
+
+    <td>{{ referral.referral_date}}</td>
+    <td>
+      <button class="button details">
+        <a href="{% url 'referral_details' referral.id %}">Details</a>
+      </button>
+
+      <button class="button edit">
+        <a href=" {% url 'referral_update' referral.id %}">Edit</a>
+      </button>
+      <button class="button delete">
+        <a href=" {% url 'referral_delete' referral.id %}">Delete</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock content %}

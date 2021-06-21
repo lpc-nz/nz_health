@@ -1,0 +1,20 @@
+{% extends "nz_health/base.html" %}
+ {% comment %} Comment {% endcomment %}
+{% block content %}
+    <h3>ADD NEW REFERRAL FORM</h3>
+    <button class ='btn back' >
+        <a type="button" href="{% url 'referral_list' %}">Back to Referrals</a>
+    </button>
+    <form method="post" autocomplete="off" id="referral_form">
+        {% csrf_token %}
+        
+        {{ referral_form }}
+        
+        <div>
+        <button class='btn submit' type="submit" >Submit</button>
+        
+        </div>
+    </form>
+    
+
+{% endblock content %}

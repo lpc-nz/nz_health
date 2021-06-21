@@ -1,0 +1,44 @@
+{% extends "nz_health/base.html" %} {% block content %}
+<h2>Will Show Person_details here</h2>
+<button class="btn back">
+  <a href="/person">Back</a>
+</button>
+<div class="person-details">
+  <div>
+    <div>
+      <p>First Name: {{ person_details.first_name }}</p>
+      <p>Last Name: {{ person_details.last_name }}</p>
+      <p>DOB: {{ person_details.date_of_birth }}</p>
+    </div>
+    <div>
+      <form
+        action="{% url 'add_referral' person_details.id %}"
+        method="post"
+        autocomplete="off"
+        id="referral_form"
+      >
+        {% csrf_token %} {{ referral_form }}
+        <div>
+          <button class="btn submit" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <table>
+    <tr>
+      <th>Referrer</th>
+      <th>Referrer Date</th>
+      <th>Note</th>
+    </tr>
+    {% for referral in person_details.referral_set.all %}
+    <tr>
+      <td>{{ referral.referrer }}</td>
+
+      <td>{{ referral.referral_date}}</td>
+      <td>{{ referral.note }}</td>
+    </tr>
+    {% endfor%}
+  </table>
+</div>
+
+{% endblock content %}
